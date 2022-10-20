@@ -1,13 +1,18 @@
 import React from "react";
+import {  useSelector } from "react-redux";
+
 // add any needed imports here
 
 function Users() {
+  const length = useSelector(state => state.users.length)
+  const users = useSelector(state => state.users)
+  console.log(users)
   return (
     <div>
       <ul>
-        Users!
-        {/* Write code here that displays the usernames of all users in the Redux store */}
-        {/* In addition, display the total number of users curently in the store */}
+        {/* Users! */}
+        {users.map(user => <li key={user.username}>{user.username}</li> )}
+        Total Users: {length}
       </ul>
     </div>
   );

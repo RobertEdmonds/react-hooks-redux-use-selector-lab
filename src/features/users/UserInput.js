@@ -7,7 +7,7 @@ function UserInput() {
   const [formData, setFormData] = useState({
     username: "",
     hometown: "",
-  });
+});
 
   function handleInputChange(event) {
     setFormData({
